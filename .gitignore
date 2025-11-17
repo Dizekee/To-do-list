@@ -1,0 +1,21 @@
+﻿# Go binaries
+*.exe
+*.test
+*.out
+coverage.html
+
+# Dependency directories
+vendor/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Go workspace file
+go.work
