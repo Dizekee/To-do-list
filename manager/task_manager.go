@@ -101,9 +101,13 @@ func (tm *TaskManager) GetTasksByType(taskType string) []tasks.Task {
 	for _, task := range tm.tasks {
 		switch taskType {
 		case "work":
-			filteredTasks = append(filteredTasks, task)
+			if _, isWorkTask := task.(*tasks.WorkTask); isWorkTask {
+				filteredTasks = append(filteredTasks, task)
+			}
 		case "personal":
-			filteredTasks = append(filteredTasks, task)
+			if _, isPersonalTask := task.(*tasks.PersonalTask); isPersonalTask {
+				filteredTasks = append(filteredTasks, task)
+			}
 		}
 	}
 	return filteredTasks
